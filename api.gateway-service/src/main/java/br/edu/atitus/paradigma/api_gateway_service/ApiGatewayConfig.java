@@ -13,13 +13,13 @@ public class ApiGatewayConfig {
         return builder.routes()
                 .route("cambio_service", r -> r.path("/cambio-service/**")
                         .filters(f -> f.addRequestHeader("Usuario", "Carlos Henrique Ferrão"))
-                        .uri("http://localhost:8100"))
+                        .uri("http://cambio-service:8080")) 
                 .route("produto_service", r -> r.path("/produto-service/**")
                         .filters(f -> f.addRequestHeader("Usuario", "Carlos Henrique Ferrão"))
-                        .uri("http://localhost:8200"))
+                        .uri("http://produto-service:8080")) 
                 .route("saudacao_service", r -> r.path("/saudacao-service/**")
                         .filters(f -> f.addRequestHeader("Usuario", "Carlos Henrique Ferrão"))
-                        .uri("http://localhost:8081"))
+                        .uri("http://localhost:8081")) 
                 .build();
     }
 }
